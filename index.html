@@ -552,6 +552,13 @@
       .gdpr-banner { flex-direction: column; align-items: stretch; }
       .gdpr-btns { justify-content: stretch; }
       .gdpr-accept, .gdpr-decline { flex: 1; text-align: center; }
+      .hero-img { object-position: 65% 50%; }
+      .shade { background: linear-gradient(180deg, rgba(18,18,18,.7) 0%, rgba(18,18,18,.3) 40%, rgba(18,18,18,.6) 100%); }
+      body.light .shade { background: linear-gradient(180deg, rgba(244,244,240,.7) 0%, rgba(244,244,240,.3) 40%, rgba(244,244,240,.6) 100%); }
+      .glow { background: linear-gradient(180deg, rgba(18,18,18,.05), rgba(18,18,18,.8)); }
+      body.light .glow { background: linear-gradient(180deg, rgba(244,244,240,.05), rgba(244,244,240,.8)); }
+      .about-right { flex-direction: column; }
+      .about-right img { width: 100% !important; min-width: unset !important; }
     }
 
     @media (min-width: 640px) {
@@ -668,7 +675,7 @@
         <p class="label"><span class="label-emoji">📍</span> Production-ready in Athens</p>
         <h2 class="h2"><span class="h2-animated">A driver who understands the rhythm of a shoot.</span></h2>
       </div>
-      <div style="display:flex;gap:40px;align-items:center;">
+      <div class="about-right" style="display:flex;gap:40px;align-items:center;">
         <p class="body" style="margin:0;">Production transport is about more than arriving at an address. It means reading the day, staying calm when call times move, knowing when to be visible and when to disappear, and keeping people moving between airports, hotels, studios, sets, and filming locations without adding noise to the production.</p>
         <img src="assets/driver-luke.png" alt="Luke Mathas — Driver" style="width:160px;min-width:160px;aspect-ratio:3/4;object-fit:cover;object-position:center 25%;filter:grayscale(1);">
       </div>
