@@ -253,7 +253,7 @@
     .dark { background: var(--bg); }
     .panel { background: var(--bg2); }
 
-    .section-grid { max-width: 1280px; display: grid; gap: 44px; text-align: left; justify-items: start; }
+    .section-grid { display: grid; gap: 44px; text-align: left; }
 
     .h2 {
       font-family: 'Archivo Black';
@@ -351,8 +351,8 @@
     }
 
     .vehicle-grid {
-      position: relative; max-width: 1280px;
-      display: grid; gap: 44px; align-items: center; text-align: left; justify-items: start;
+      position: relative;
+      display: grid; gap: 80px; align-items: center; text-align: left;
     }
 
     .poster {
@@ -374,7 +374,7 @@
     }
 
     /* ===== WHY ===== */
-    .why-grid { max-width: 1280px; display: grid; gap: 38px; text-align: left; justify-items: start; }
+    .why-grid { display: grid; gap: 38px; text-align: left; }
     .why-list { display: grid; gap: 12px; }
 
     .why {
@@ -387,7 +387,7 @@
 
     /* ===== CONTACT ===== */
     .contact-box {
-      max-width: 1280px; text-align: left;
+      text-align: left;
       border: 1px solid var(--border); background: var(--card-bg);
       padding: 30px; display: grid; gap: 34px;
     }
@@ -573,11 +573,11 @@
       nav, .hero-content, section { padding-left: 56px; padding-right: 56px; }
       footer { padding-left: 56px; padding-right: 56px; }
       nav { padding-top: 28px; padding-bottom: 28px; }
-      .section-grid { grid-template-columns: 1.4fr 1fr; align-items: end; justify-items: start; gap: 80px; }
+      .section-grid { grid-template-columns: 1fr 1fr; align-items: end; gap: 80px; }
       .section-grid .body { justify-self: end; }
       .cards { grid-template-columns: repeat(3, 1fr); }
-      .vehicle-grid { grid-template-columns: 1fr 1fr; gap: 80px; }
-      .why-grid { grid-template-columns: 1.3fr 1fr; }
+      .vehicle-grid { grid-template-columns: 1fr 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
       .why-list { grid-template-columns: repeat(2, 1fr); }
       .contact-box { grid-template-columns: 1fr auto; align-items: center; padding: 56px; }
       .contact-actions { min-width: 360px; }
