@@ -60,19 +60,56 @@
 
     /* ===== THEME TOGGLE ===== */
     .theme-toggle {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: 1px solid var(--border);
-      background: var(--card-bg);
-      color: var(--fg);
-      display: grid;
-      place-items: center;
-      font-size: 18px;
-      transition: border-color .3s, background .3s;
+      position: relative;
+      width: 72px;
+      height: 36px;
+      border-radius: 36px;
+      border: none;
+      cursor: pointer;
+      background: #2a2a2e;
+      box-shadow: inset 0 2px 6px rgba(0,0,0,.4), 0 1px 3px rgba(0,0,0,.2);
+      transition: background .4s ease, box-shadow .4s ease;
+      padding: 0;
     }
 
-    .theme-toggle:hover { border-color: var(--lime); }
+    .theme-toggle .toggle-knob {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #e8e8e8;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+      display: grid;
+      place-items: center;
+      transition: transform .4s cubic-bezier(.68,-.15,.265,1.35), background .4s ease;
+    }
+
+    .theme-toggle .toggle-knob svg {
+      width: 16px;
+      height: 16px;
+      transition: opacity .3s ease, transform .3s ease;
+      position: absolute;
+    }
+
+    .theme-toggle .sun-icon { opacity: 0; transform: rotate(-90deg) scale(.5); color: #f5a623; }
+    .theme-toggle .moon-icon { opacity: 1; transform: rotate(0deg) scale(1); color: #8b8b8b; }
+
+    body.light .theme-toggle {
+      background: #e0e0da;
+      box-shadow: inset 0 2px 6px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.08);
+    }
+
+    body.light .theme-toggle .toggle-knob {
+      transform: translateX(36px);
+      background: #ffffff;
+    }
+
+    body.light .theme-toggle .sun-icon { opacity: 1; transform: rotate(0deg) scale(1); }
+    body.light .theme-toggle .moon-icon { opacity: 0; transform: rotate(90deg) scale(.5); }
+
+    .theme-toggle:hover { box-shadow: inset 0 2px 6px rgba(0,0,0,.4), 0 0 0 2px var(--lime); }
 
     /* ===== HERO ===== */
     .hero { position: relative; min-height: 100vh; overflow: hidden; }
@@ -615,7 +652,12 @@
       </div>
       <div class="nav-right">
         <a class="nav-cta" href="#booking">Book Transport ↗</a>
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">☀️</button>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
+          <span class="toggle-knob">
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </span>
+        </button>
         <button class="menu-btn" aria-label="Open menu">☰</button>
       </div>
     </nav>
@@ -845,17 +887,11 @@
     document.body.classList.remove('light');
     localStorage.setItem('theme', 'dark');
   }
-  updateToggleIcon();
 
   toggle.addEventListener('click', () => {
     document.body.classList.toggle('light');
     localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
-    updateToggleIcon();
   });
-
-  function updateToggleIcon() {
-    toggle.textContent = document.body.classList.contains('light') ? '☀️' : '🌙';
-  }
 
   // ===== SCROLL REVEAL =====
   const observer = new IntersectionObserver((entries) => {
