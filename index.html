@@ -242,13 +242,14 @@
     .h1 {
       max-width: 1040px;
       font-size: clamp(2.75rem, 7vw, 7rem);
-      line-height: 1.2; text-transform: uppercase; margin: 0;
+      line-height: 1.15; text-transform: uppercase; margin: 0;
       color: #121212;
     }
 
     .h1 span {
       background: var(--lime);
-      padding: 6px 10px 8px;
+      padding: 2px 0;
+      box-shadow: 8px 0 0 var(--lime), -8px 0 0 var(--lime);
       box-decoration-break: clone;
       -webkit-box-decoration-break: clone;
     }
@@ -306,7 +307,7 @@
     .h2 {
       font-family: 'Archivo Black';
       font-size: clamp(1.4rem, 3.2vw, 3.2rem);
-      line-height: 1.25; text-transform: uppercase; margin: 0;
+      line-height: 1.15; text-transform: uppercase; margin: 0;
     }
 
     .body {
@@ -571,7 +572,8 @@
       display: inline;
       color: #121212;
       background: var(--lime);
-      padding: 6px 8px 8px;
+      padding: 2px 0;
+      box-shadow: 6px 0 0 var(--lime), -6px 0 0 var(--lime);
       box-decoration-break: clone;
       -webkit-box-decoration-break: clone;
       clip-path: inset(0 100% 0 0);
