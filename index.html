@@ -414,10 +414,11 @@
     .poster {
       width: 100%;
       max-height: 720px;
-      object-fit: cover;
-      border: 1px solid rgba(18,18,18,.2);
-      background: #121212;
-      box-shadow: 0 28px 80px rgba(0,0,0,.28);
+      object-fit: contain;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,.25));
     }
 
     .checks {
@@ -890,7 +891,7 @@
   <!-- ===== VEHICLE ===== -->
   <section id="vehicle" class="vehicle">
     <div class="vehicle-grid">
-      <img class="poster" src="assets/van-studio-poster.png" alt="VW Kombi van suitable for production crew transport">
+      <img class="poster" src="assets/van-rear-transparent.png" alt="VW Kombi Transporter rear view">
       <div>
         <p class="small" style="color:#121212">◆ Volkswagen Kombi / up to 8 passengers</p>
         <h2 class="h2">Practical, spacious, and production-friendly.</h2>
