@@ -303,12 +303,13 @@
     .dark { background: var(--bg); }
     .panel { background: var(--bg2); }
 
-    .section-grid { display: grid; gap: 44px; text-align: left; }
+    .section-grid { display: grid; gap: 44px; text-align: left; overflow: visible; }
 
     .h2 {
       font-family: 'Archivo Black';
       font-size: clamp(1.4rem, 3.2vw, 3.2rem);
       line-height: 1.35; text-transform: uppercase; margin: 0;
+      overflow: visible;
     }
 
     .body {
@@ -630,7 +631,7 @@
       nav, .hero-content, section { padding-left: 56px; padding-right: 56px; }
       footer { padding-left: 56px; padding-right: 56px; }
       nav { padding-top: 28px; padding-bottom: 28px; }
-      .section-grid { grid-template-columns: 1fr 1fr; align-items: end; gap: 80px; }
+      .section-grid { grid-template-columns: 1fr 1fr; align-items: start; gap: 80px; }
       .section-grid .body { justify-self: end; }
       .cards { grid-template-columns: repeat(3, 1fr); }
       .vehicle-grid { grid-template-columns: 1fr 1fr; }
