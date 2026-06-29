@@ -36,8 +36,8 @@
       --border: rgba(18,18,18,.1);
       --card-bg: rgba(18,18,18,.04);
       --card-hover: rgba(18,18,18,.08);
-      --lime: #d7ff00;
-      --lime-hover: #e8ff44;
+      --lime: #3d6b00;
+      --lime-hover: #4a8200;
       --overlay: rgba(0,0,0,.5);
     }
 
@@ -522,12 +522,20 @@
       display: inline;
       background-image: linear-gradient(var(--lime), var(--lime));
       background-repeat: no-repeat;
-      background-size: 0% 3px;
-      background-position: 0 100%;
-      transition: background-size .6s ease;
+      background-size: 100% 3px;
+      background-position: -100% 100%;
     }
 
-    .reveal.visible .h2-animated { background-size: 100% 3px; }
+    @keyframes underline-sweep {
+      0%   { background-position: -100% 100%; }
+      40%  { background-position: 0% 100%; }
+      60%  { background-position: 0% 100%; }
+      100% { background-position: 200% 100%; }
+    }
+
+    .reveal.visible .h2-animated {
+      animation: underline-sweep 1.8s ease forwards;
+    }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 480px) {
