@@ -720,7 +720,7 @@
     #cursor.active {
       width: 40px; height: 40px;
     }
-    body.light #cursor { background: rgba(107, 91, 199, 0.4); mix-blend-mode: normal; }
+    body.light #cursor { background: #899929; mix-blend-mode: difference; }
     body.light #cursor.active { width: 40px; height: 40px; }
     @media (pointer: coarse) {
       #cursor { display: none; }
@@ -1200,7 +1200,7 @@
   const saved = localStorage.getItem('theme');
   const cursorEl = document.getElementById('cursor');
   function updateCursorColor() {
-    if (cursorEl) cursorEl.style.background = document.body.classList.contains('light') ? '#6B5BC7' : '#d7ff00';
+    if (cursorEl) cursorEl.style.background = document.body.classList.contains('light') ? '#899929' : '#d7ff00';
   }
   if (saved === 'light') {
     document.body.classList.add('light');
