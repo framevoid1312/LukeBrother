@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
-  <meta http-equiv="Pragma" content="no-cache"/>
-  <meta http-equiv="Expires" content="0"/>
   <meta name="description" content="Professional VW Kombi production transport in Athens for commercials, films, series, airport pickups, and production teams."/>
+  <link rel="canonical" href="https://framevoid1312.github.io/LukeBrother/">
   <title>Luke Mathas Transports | Production Transport Athens</title>
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/favicon.png">
@@ -15,13 +13,13 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Luke Mathas Transports | Production Transport Athens">
   <meta property="og:description" content="Professional VW Kombi production transport in Athens for commercials, films, series, airport pickups, and production teams.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/framevoid1312/LukeBrother/master/assets/hero-van.jpg">
+  <meta property="og:image" content="https://framevoid1312.github.io/LukeBrother/assets/hero-van.png">
   <meta property="og:url" content="https://lukemathastransports.com">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Luke Mathas Transports | Production Transport Athens">
   <meta name="twitter:description" content="Professional VW Kombi production transport in Athens for commercials, films, series, airport pickups, and production teams.">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/framevoid1312/LukeBrother/master/assets/hero-van.jpg">
+  <meta name="twitter:image" content="https://framevoid1312.github.io/LukeBrother/assets/hero-van.png">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -44,13 +42,14 @@
       "name": "Athens, Greece"
     },
     "priceRange": "$$",
-    "image": "https://raw.githubusercontent.com/framevoid1312/LukeBrother/master/assets/hero-van.jpg",
+    "image": "https://framevoid1312.github.io/LukeBrother/assets/hero-van.png",
     "sameAs": []
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/hero-van.png">
   <style>
     /* ===== TOKENS ===== */
     :root {
@@ -58,7 +57,7 @@
       --bg2: #19171d;
       --fg: #ffffff;
       --fg-soft: rgba(255,255,255,.7);
-      --fg-muted: rgba(255,255,255,.45);
+      --fg-muted: rgba(255,255,255,.65);
       --border: rgba(255,255,255,.1);
       --card-bg: rgba(255,255,255,.04);
       --card-hover: rgba(255,255,255,.07);
@@ -73,7 +72,7 @@
       --bg2: #eaeae4;
       --fg: #121212;
       --fg-soft: rgba(18,18,18,.72);
-      --fg-muted: rgba(18,18,18,.42);
+      --fg-muted: rgba(18,18,18,.58);
       --border: rgba(18,18,18,.1);
       --card-bg: rgba(18,18,18,.04);
       --card-hover: rgba(18,18,18,.08);
@@ -84,8 +83,9 @@
 
     /* ===== RESET ===== */
     * { box-sizing: border-box; margin: 0; }
-    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
     html, body { max-width: 100%; overflow-x: hidden; }
+    *:focus-visible { outline: 2px solid var(--lime); outline-offset: 2px; }
 
     body {
       background: var(--bg);
@@ -230,7 +230,7 @@
     }
 
     .menu {
-      position: fixed; inset: 0; z-index: 20;
+      position: fixed; inset: 0; z-index: 150;
       background: rgba(18,18,18,.98); backdrop-filter: blur(4px);
       display: grid; grid-template-rows: auto 1fr;
       opacity: 0; visibility: hidden; transition: .45s;
@@ -557,7 +557,7 @@
     .gdpr-accept:hover { background: var(--lime-hover); }
 
     .gdpr-decline {
-      background: transparent; color: rgba(255,255,255,.5);
+      background: transparent; color: rgba(255,255,255,.75);
       border: 1px solid rgba(255,255,255,.15);
       padding: 12px 24px; font-size: 12px; font-weight: 900;
       letter-spacing: .16em; text-transform: uppercase;
@@ -693,6 +693,12 @@
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
       background-size: 180px;
       animation: grain 0.4s steps(3) infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      body::after { animation: none; }
+      .hero-img { transform: none !important; }
+      .fade { opacity: 1 !important; transform: none !important; transition: none !important; }
+      #cursor { display: none; }
     }
     @keyframes grain {
       0%,100% { transform: translate(0,0); }
@@ -861,12 +867,12 @@
 
   <!-- HERO -->
   <section class="hero">
-    <img class="hero-img" src="assets/hero-van.png" alt="VW Kombi van for production transport in Athens">
+    <img class="hero-img" src="assets/hero-van.png" alt="VW Kombi van for production transport in Athens" width="1920" height="1080" fetchpriority="high">
     <div class="shade"></div>
     <div class="glow"></div>
-    <div class="ghost">KOMBI</div>
+    <div class="ghost" aria-hidden="true">KOMBI</div>
 
-    <nav>
+    <nav aria-label="Main navigation">
       <a href="#"><img class="logo" src="assets/logo-transfers.png" alt="Luke Mathas Transports"></a>
       <div class="links">
         <a href="#about">About</a>
@@ -1035,23 +1041,23 @@
     </div>
     <div class="faq-list reveal">
       <div class="faq-item">
-        <button class="faq-q">How far in advance should I book?<span class="faq-icon">+</span></button>
+        <button class="faq-q" aria-expanded="false">How far in advance should I book?<span class="faq-icon">+</span></button>
         <div class="faq-a"><p>We recommend booking as early as possible, especially during peak production season (April–October). However, we can often accommodate last-minute requests within 24–48 hours.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Can you handle multi-day shoots?<span class="faq-icon">+</span></button>
+        <button class="faq-q" aria-expanded="false">Can you handle multi-day shoots?<span class="faq-icon">+</span></button>
         <div class="faq-a"><p>Absolutely. Multi-day bookings are common and preferred. We offer consistent service across the entire production schedule.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">What about overtime or schedule changes?<span class="faq-icon">+</span></button>
+        <button class="faq-q" aria-expanded="false">What about overtime or schedule changes?<span class="faq-icon">+</span></button>
         <div class="faq-a"><p>Productions rarely run exactly to plan. We stay flexible and adapt to schedule changes, extended hours, and last-minute location additions.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Is airport signage available?<span class="faq-icon">+</span></button>
+        <button class="faq-q" aria-expanded="false">Is airport signage available?<span class="faq-icon">+</span></button>
         <div class="faq-a"><p>Yes. We can arrange branded or name signage for airport arrivals on request.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">What areas do you cover?<span class="faq-icon">+</span></button>
+        <button class="faq-q" aria-expanded="false">What areas do you cover?<span class="faq-icon">+</span></button>
         <div class="faq-a"><p>We're based in Athens and cover the greater Attica region, including all major studios, hotels, and the airport. Travel to other regions in Greece is available on request.</p></div>
       </div>
     </div>
@@ -1101,7 +1107,7 @@
       <a href="#about">About</a>
       <a href="#booking">Contact</a>
     </div>
-    <p>© 2025 Luke Mathas. All rights reserved.</p>
+    <p>© 2025–2026 Luke Mathas. All rights reserved.</p>
   </div>
 </footer>
 
@@ -1114,7 +1120,7 @@
 
 <!-- GDPR -->
 <div class="gdpr-banner" id="gdpr-banner">
-  <p>We use cookies to improve your experience. By continuing to browse, you agree to our <a href="#" id="gdpr-privacy-link">Privacy Policy</a>.</p>
+  <p>We use cookies to improve your experience. <a href="#" id="gdpr-privacy-link">Privacy Policy</a>.</p>
   <div class="gdpr-btns">
     <button class="gdpr-accept" id="gdpr-accept">Accept</button>
     <button class="gdpr-decline" id="gdpr-decline">Decline</button>
@@ -1122,7 +1128,7 @@
 </div>
 
 <!-- SERVICE DETAIL MODAL -->
-<div class="service-overlay" id="service-overlay">
+<div class="service-overlay" id="service-overlay" role="dialog" aria-modal="true" aria-label="Service details">
   <div class="service-modal">
     <div class="service-modal-emoji" id="svc-emoji"></div>
     <h3 id="svc-title"></h3>
@@ -1132,9 +1138,10 @@
 </div>
 
 <!-- PRIVACY MODAL -->
-<div class="privacy-overlay" id="privacy-overlay">
+<div class="privacy-overlay" id="privacy-overlay" role="dialog" aria-modal="true" aria-label="Privacy Policy">
   <div class="privacy-modal">
     <h2>Privacy Policy</h2>
+    <p style="font-size:12px;color:var(--fg-muted);margin-bottom:16px;">Last updated: June 2026</p>
     <h3>Introduction</h3>
     <p>Luke Mathas Transports ("we", "our", "us") is committed to protecting your personal data in accordance with the General Data Protection Regulation (GDPR) (EU) 2016/679. This policy explains how we collect, use, and protect your information.</p>
     <h3>Data We Collect</h3>
@@ -1146,11 +1153,11 @@
     <h3>Data Retention</h3>
     <p>We retain your data only as long as necessary to fulfill the purposes described above, or as required by law. Booking records are typically retained for up to 24 months.</p>
     <h3>Your Rights</h3>
-    <p>Under GDPR, you have the right to access, correct, delete, or restrict the processing of your personal data. You may also withdraw consent at any time. To exercise these rights, contact us at bookings@lukemathastransports.com.</p>
+    <p>Under GDPR, you have the right to access, correct, delete, or restrict the processing of your personal data. You may also withdraw consent at any time. To exercise these rights, contact us at <a href="mailto:bookings@lukemathastransports.com" style="color:var(--lime)">bookings@lukemathastransports.com</a>.</p>
     <h3>Cookies</h3>
     <p>This website uses minimal cookies to remember your cookie consent preference. No third-party tracking or analytics cookies are used.</p>
     <h3>Contact</h3>
-    <p>For any data protection enquiries, please contact: bookings@lukemathastransports.com</p>
+    <p>For any data protection enquiries, please contact: <a href="mailto:bookings@lukemathastransports.com" style="color:var(--lime)">bookings@lukemathastransports.com</a></p>
     <button class="privacy-close" id="privacy-close">Close</button>
   </div>
 </div>
@@ -1222,7 +1229,7 @@
     window.addEventListener('scroll', () => {
       if (!ticking) {
         requestAnimationFrame(() => {
-          const scrollY = window.pageYOffset;
+          const scrollY = window.scrollY;
           const heroH = document.querySelector('.hero').offsetHeight;
           if (scrollY < heroH) {
             heroImg.style.transform = 'translateY(' + (scrollY * 0.3) + 'px)';
@@ -1284,23 +1291,31 @@
     btn.addEventListener('click', () => {
       const item = btn.parentElement;
       const wasActive = item.classList.contains('active');
-      document.querySelectorAll('.faq-item.active').forEach(i => i.classList.remove('active'));
-      if (!wasActive) item.classList.add('active');
+      document.querySelectorAll('.faq-item.active').forEach(i => {
+        i.classList.remove('active');
+        i.querySelector('.faq-q')?.setAttribute('aria-expanded', 'false');
+      });
+      if (!wasActive) {
+        item.classList.add('active');
+        btn.setAttribute('aria-expanded', 'true');
+      }
     });
   });
 
   // ===== GDPR =====
   const banner = document.getElementById('gdpr-banner');
-  if (localStorage.getItem('gdpr-consent')) banner.classList.add('hidden');
+  try {
+    if (localStorage.getItem('gdpr-consent')) banner?.classList.add('hidden');
+  } catch(e) {}
 
-  document.getElementById('gdpr-accept').addEventListener('click', () => {
-    localStorage.setItem('gdpr-consent', 'accepted');
-    banner.classList.add('hidden');
+  document.getElementById('gdpr-accept')?.addEventListener('click', () => {
+    try { localStorage.setItem('gdpr-consent', 'accepted'); } catch(e) {}
+    banner?.classList.add('hidden');
   });
 
-  document.getElementById('gdpr-decline').addEventListener('click', () => {
-    localStorage.setItem('gdpr-consent', 'declined');
-    banner.classList.add('hidden');
+  document.getElementById('gdpr-decline')?.addEventListener('click', () => {
+    try { localStorage.setItem('gdpr-consent', 'declined'); } catch(e) {}
+    banner?.classList.add('hidden');
   });
 
   // ===== PRIVACY MODAL =====
@@ -1333,8 +1348,16 @@
     });
   });
 
-  document.getElementById('svc-close').addEventListener('click', () => svcOverlay.classList.remove('open'));
-  svcOverlay.addEventListener('click', e => { if (e.target === svcOverlay) svcOverlay.classList.remove('open'); });
+  document.getElementById('svc-close')?.addEventListener('click', () => svcOverlay.classList.remove('open'));
+  svcOverlay?.addEventListener('click', e => { if (e.target === svcOverlay) svcOverlay.classList.remove('open'); });
+
+  // ===== ESCAPE KEY FOR MODALS =====
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      if (svcOverlay?.classList.contains('open')) svcOverlay.classList.remove('open');
+      if (privOverlay?.classList.contains('open')) privOverlay.classList.remove('open');
+    }
+  });
 </script>
 </body>
 </html>
